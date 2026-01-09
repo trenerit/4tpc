@@ -1,10 +1,20 @@
-<form #form1="ngForm" (ngSubmit)="onSubmit(form1)">
-    <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Imię</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" name="firstname" ngModel>
-    </div>
-    <!-- <input type="text" name="firstname" ngModel> Podaj imię -->
-    <button type="submit" class="btn btn-primary">Zapisz</button>
-</form>
-
-<p>{{firstname}}</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Lp</th>
+            <th>Miasto</th>
+            <th>Cena</th>
+        </tr>
+    </thead>
+    <!-- @if (tabLength > 0) { -->
+        <tbody>
+            @for (item of tab; track item.id) {
+                <tr>
+                    <td>{{item.id}}</td>
+                    <td>{{item.city}}</td>
+                    <td>{{item.price}}</td>
+                </tr>
+            }
+        </tbody>
+    <!-- } -->
+</table>

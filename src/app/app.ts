@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
+import { DataModel } from './models/data-model';
 
 @Component({
   selector: 'app-root',
@@ -10,10 +11,8 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
 
-  firstname: string = '';
-
-  protected onSubmit(data: any): void {
-    console.log(data.value.firstname);
-    this.firstname = data.value.firstname;
-  }
+  tab?:DataModel[] = [];
+  tabLength = this.tab?.length;
+  
+  
  }
