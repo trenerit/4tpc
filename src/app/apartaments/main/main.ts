@@ -10,8 +10,7 @@ import { ApartamentsService } from '../apartaments-service';
 })
 export class Main {
 
-  tab?:DataModel[] = [];
-  tabLength = this.tab?.length;
+  dataFromSrv: DataModel[] = [];
 
   constructor(private readonly apartamentsService: ApartamentsService) {}
 
@@ -21,7 +20,18 @@ export class Main {
 
   getApartaments() {
     this.apartamentsService.getApartaments().subscribe(dataFromSrv => {
-      console.log(dataFromSrv);
+      this.dataFromSrv = dataFromSrv;
+      console.log(this.dataFromSrv);
     });
+  }
+
+  delApartments(idRecord: number) {
+   
+    const potwierdzenie = confirm('Czy na pewno chcesz usunąć tę pozycję?');
+    if (potwierdzenie) {
+        this.apartamentsService.delApartaments(idRecord).subscribe(dataFromSrv => {
+        this.getApartaments();
+      });
+    }    
   }
 }

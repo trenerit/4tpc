@@ -4,15 +4,19 @@
             <th>Lp</th>
             <th>Miasto</th>
             <th>Cena</th>
+            <th>Czas dodania</th>
+            <th>Akcje</th>
         </tr>
     </thead>
     <!-- @if (tabLength > 0) { -->
         <tbody>
-            @for (item of tab; track item.id) {
+            @for (item of dataFromSrv; track item.id; let i = $index) {
                 <tr>
-                    <td>{{item.id}}</td>
+                    <td>{{i + 1}}</td>
                     <td>{{item.city}}</td>
-                    <td>{{item.price}}</td>
+                    <td>{{item.price}}zł</td>
+                    <td>{{item.date_add}}zł</td>
+                    <td><button (click)="delApartments(item.id)" class="btn btn-danger btn-sm">Usuń</button></td>
                 </tr>
             }
         </tbody>
