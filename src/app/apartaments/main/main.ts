@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { DataModel } from '../../models/data-model';
 import { ApartamentsService } from '../apartaments-service';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-main',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './main.html',
   styleUrl: './main.css',
 })
@@ -25,7 +26,9 @@ export class Main {
     });
   }
 
-  delApartments(idRecord: number) {
+  delApartments(idRecord: number, e: Event) {
+
+    e.stopPropagation();
    
     const potwierdzenie = confirm('Czy na pewno chcesz usunąć tę pozycję?');
     if (potwierdzenie) {
@@ -33,5 +36,9 @@ export class Main {
         this.getApartaments();
       });
     }    
+  }
+
+  onClickTr() {
+    
   }
 }

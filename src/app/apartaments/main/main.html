@@ -11,12 +11,13 @@
     <!-- @if (tabLength > 0) { -->
         <tbody>
             @for (item of dataFromSrv; track item.id; let i = $index) {
-                <tr>
+                <!-- <tr (click)="onClickTr()"> -->
+                <tr [routerLink]="['/view', item.id]">
                     <td>{{i + 1}}</td>
                     <td>{{item.city}}</td>
                     <td>{{item.price}}zł</td>
                     <td>{{item.date_add}}zł</td>
-                    <td><button (click)="delApartments(item.id)" class="btn btn-danger btn-sm">Usuń</button></td>
+                    <td><button (click)="delApartments(item.id, $event)" class="btn btn-danger btn-sm">Usuń</button></td>
                 </tr>
             }
         </tbody>

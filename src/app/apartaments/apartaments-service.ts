@@ -16,6 +16,10 @@ export class ApartamentsService {
     return this.http.get(`${this.baseApiUrl}/apartaments`);
   }
   
+  getApartament(id: number): Observable<any> {
+    return this.http.get(`${this.baseApiUrl}/apartaments/${id}`);
+  }
+  
   delApartaments(idRecord: number): Observable<any> {
     return this.http.delete(`${this.baseApiUrl}/apartaments/${idRecord}`);
   }
