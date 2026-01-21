@@ -23,5 +23,9 @@ export class ApartamentsService {
   delApartaments(idRecord: number): Observable<any> {
     return this.http.delete(`${this.baseApiUrl}/apartaments/${idRecord}`);
   }
+
+  addApartament(data: object): any {
+    return this.http.post(`${this.baseApiUrl}/apartaments`, data);
+  }
   
 }
