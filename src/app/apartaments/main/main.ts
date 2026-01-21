@@ -3,10 +3,11 @@ import { DecimalPipe } from '@angular/common';
 import { DataModel } from '../../models/data-model';
 import { ApartamentsService } from '../apartaments-service';
 import { RouterLink } from "@angular/router";
+import { ApartamentAddModal } from '../apartament-add-modal/apartament-add-modal';
 
 @Component({
   selector: 'app-main',
-  imports: [RouterLink, DecimalPipe],
+  imports: [RouterLink, DecimalPipe, ApartamentAddModal],
   templateUrl: './main.html',
   styleUrl: 'main.scss',
 })
@@ -39,7 +40,13 @@ export class Main {
     }
   }
 
-  onClickTr() {
+  isModalOpen = false;
 
+  openModal() {
+    this.isModalOpen = true;
+  }
+
+  closeModal() {
+    this.isModalOpen = false;
   }
 }

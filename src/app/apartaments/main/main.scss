@@ -133,4 +133,88 @@
         padding: 0.25rem 0.5rem;
         font-size: 0.75rem;
     }
+
+    &.btn-primary {
+        background-color: #0369a1;
+        color: white;
+
+        &:hover {
+            background-color: #0284c7;
+        }
+    }
+
+    &.btn-secondary {
+        background-color: #f1f5f9;
+        color: var(--text-main);
+        border: 1px solid var(--border-color);
+
+        &:hover {
+            background-color: #e2e8f0;
+        }
+    }
+}
+
+.card-footer {
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+
+    label {
+        display: block;
+        margin-bottom: var(--spacing-sm);
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--text-main);
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 0.625rem;
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-md);
+        font-size: 0.875rem;
+        color: var(--text-main);
+        transition: border-color 0.2s;
+        box-sizing: border-box;
+
+        &:focus {
+            outline: none;
+            border-color: #0369a1;
+            box-shadow: 0 0 0 3px rgba(3, 105, 161, 0.1);
+        }
+    }
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }

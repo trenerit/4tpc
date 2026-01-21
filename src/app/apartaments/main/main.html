@@ -2,7 +2,9 @@
     <div class="card-header">
         <h2>Lista Apartamentów</h2>
         <div class="actions">
-            <!-- Placeholder for future actions like Add New -->
+            <button class="btn btn-primary" (click)="openModal()">
+                + Dodaj
+            </button>
         </div>
     </div>
     <div class="card-body">
@@ -42,3 +44,5 @@
         </div>
     </div>
 </div>
+
+<app-apartament-add-modal [isOpen]="isModalOpen" (close)="closeModal()"></app-apartament-add-modal>
