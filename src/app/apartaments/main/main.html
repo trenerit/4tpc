@@ -1,25 +1,44 @@
-<table class="table">
-    <thead>
-        <tr>
-            <th>Lp</th>
-            <th>Miasto</th>
-            <th>Cena</th>
-            <th>Czas dodania</th>
-            <th>Akcje</th>
-        </tr>
-    </thead>
-    <!-- @if (tabLength > 0) { -->
-        <tbody>
-            @for (item of dataFromSrv; track item.id; let i = $index) {
-                <!-- <tr (click)="onClickTr()"> -->
-                <tr [routerLink]="['/view', item.id]">
-                    <td>{{i + 1}}</td>
-                    <td>{{item.city}}</td>
-                    <td>{{item.price}}zł</td>
-                    <td>{{item.date_add}}zł</td>
-                    <td><button (click)="delApartments(item.id, $event)" class="btn btn-danger btn-sm">Usuń</button></td>
-                </tr>
-            }
-        </tbody>
-    <!-- } -->
-</table>
+<div class="card">
+    <div class="card-header">
+        <h2>Lista Apartamentów</h2>
+        <div class="actions">
+            <!-- Placeholder for future actions like Add New -->
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Lp</th>
+                        <th>Miasto</th>
+                        <th>Cena</th>
+                        <th>Data Dodania</th>
+                        <th class="text-right">Akcje</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (item of dataFromSrv; track item.id; let i = $index) {
+                    <tr [routerLink]="['/view', item.id]">
+                        <td>{{i + 1}}</td>
+                        <td>
+                            <span class="city-badge">{{item.city}}</span>
+                        </td>
+                        <td class="price">{{item.price | number:'1.2-2'}} PLN</td>
+                        <td class="date">{{item.date_add}}</td>
+                        <td class="text-right">
+                            <button (click)="delApartments(item.id, $event)" class="btn btn-danger btn-sm">
+                                Usuń
+                            </button>
+                        </td>
+                    </tr>
+                    } @empty {
+                    <tr>
+                        <td colspan="5" class="empty-state">Brak apartamentów do wyświetlenia.</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

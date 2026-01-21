@@ -1,6 +1,32 @@
-<p>Id: {{data.id}}</p>
-<p>Miasto: {{data.city}}</p>
-<p>Cena: {{data.price}}</p>
-<p>Data dodania: {{data.date_add}}</p>
+<div class="card detail-card">
+    <div class="card-header">
+        <div class="header-content">
+            <button [routerLink]="['/main']" class="btn btn-outline-secondary back-btn">
+                ← Wróć
+            </button>
+            <h2>Szczegóły Apartamentu</h2>
+        </div>
+    </div>
 
-<button [routerLink]="['/main']" class = "btn btn-primary">wstecz</button>
+    <div class="card-body">
+        <div class="detail-row">
+            <div class="label">ID</div>
+            <div class="value">#{{data.id}}</div>
+        </div>
+
+        <div class="detail-row">
+            <div class="label">Miasto</div>
+            <div class="value city-value">{{data.city}}</div>
+        </div>
+
+        <div class="detail-row">
+            <div class="label">Cena</div>
+            <div class="value price-value">{{data.price | number:'1.2-2'}} PLN</div>
+        </div>
+
+        <div class="detail-row">
+            <div class="label">Data Dodania</div>
+            <div class="value">{{data.date_add}}</div>
+        </div>
+    </div>
+</div>

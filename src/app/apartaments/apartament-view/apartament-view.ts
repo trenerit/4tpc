@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
+import { DecimalPipe } from '@angular/common';
 import { ActivatedRoute, RouterLink } from "@angular/router";
 import { ApartamentsService } from '../apartaments-service';
 import { DataModel } from '../../models/data-model';
 
 @Component({
   selector: 'app-apartament-view',
-  imports: [RouterLink],
+  imports: [RouterLink, DecimalPipe],
   templateUrl: './apartament-view.html',
-  styleUrl: './apartament-view.css',
+  styleUrl: 'apartament-view.scss',
 })
 export class ApartamentView {
 
@@ -16,8 +17,8 @@ export class ApartamentView {
   constructor(
     private readonly apartamentsService: ApartamentsService,
     private readonly route: ActivatedRoute,
-    
-  ) {}
+
+  ) { }
 
   ngOnInit() {
     this.getApartament();

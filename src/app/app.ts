@@ -10,6 +10,6 @@ import { provideHttpClient, withInterceptors } from '@angular/common/http';
   imports: [RouterOutlet, FormsModule],
   providers: [],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.scss'
 })
 export class App {}
