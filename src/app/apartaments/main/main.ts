@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DecimalPipe } from '@angular/common';
+import { CommonModule, DecimalPipe } from '@angular/common';
 import { DataModel } from '../../models/data-model';
 import { ApartamentsService } from '../apartaments-service';
 import { RouterLink } from "@angular/router";
@@ -7,7 +7,7 @@ import { ApartamentAddModal } from '../apartament-add-modal/apartament-add-modal
 
 @Component({
   selector: 'app-main',
-  imports: [RouterLink, DecimalPipe, ApartamentAddModal],
+  imports: [RouterLink, DecimalPipe, ApartamentAddModal, CommonModule],
   templateUrl: './main.html',
   styleUrl: 'main.scss',
 })

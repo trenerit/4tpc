@@ -27,7 +27,7 @@
                             <span class="city-badge">{{item.city}}</span>
                         </td>
                         <td class="price">{{item.price | number:'1.2-2'}} PLN</td>
-                        <td class="date">{{item.date_add}}</td>
+                        <td class="date">{{item.date_add | date:'d.MM.yr. H:mm'}}</td>
                         <td class="text-right">
                             <button (click)="delApartments(item.id, $event)" class="btn btn-danger btn-sm">
                                 Usuń
