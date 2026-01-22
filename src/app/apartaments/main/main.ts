@@ -34,7 +34,7 @@ export class Main {
 
     const potwierdzenie = confirm('Czy na pewno chcesz usunąć tę pozycję?');
     if (potwierdzenie) {
-      this.apartamentsService.delApartaments(idRecord).subscribe(dataFromSrv => {
+      this.apartamentsService.delApartaments(idRecord).subscribe(() => {
         this.getApartaments();
       });
     }
