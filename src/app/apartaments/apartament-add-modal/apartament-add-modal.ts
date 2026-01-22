@@ -12,6 +12,7 @@ import { ApartamentsService } from '../apartaments-service';
 })
 export class ApartamentAddModal {
     @Input() isOpen = false;
+    @Input() itemObj?: any;
     @Output() close = new EventEmitter<void>();
     @Output() refreshData = new EventEmitter<void>();
 
@@ -28,6 +29,13 @@ export class ApartamentAddModal {
     }
 
     myFormSubmit(data: NgForm): any {
+        if(this.itemObj.id > 0) {
+            this.aparmentsService.modApartament(data.value).subscribe(() => {
+             this.refreshData.emit();
+             this.close.emit();
+            })
+            return;
+        }
        this.aparmentsService.addApartament(data.value).subscribe(() => {
         this.refreshData.emit();
         this.close.emit();

@@ -28,4 +28,10 @@ export class ApartamentsService {
     return this.http.post(`${this.baseApiUrl}/apartaments`, data);
   }
   
+  modApartament(data: object): any {
+    return this.http.patch(`${this.baseApiUrl}/apartaments`, data);
+  }
+
+
+  
 }

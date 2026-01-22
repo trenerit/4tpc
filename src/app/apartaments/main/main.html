@@ -29,6 +29,9 @@
                         <td class="price">{{item.price | number:'1.2-2'}} PLN</td>
                         <td class="date">{{item.date_add | date:'d.MM.yr. H:mm'}}</td>
                         <td class="text-right">
+                            <button (click)="modApartments(item, $event)" class="btn btn-secondary btn-sm">
+                                Modyfikuj
+                            </button>
                             <button (click)="delApartments(item.id, $event)" class="btn btn-danger btn-sm">
                                 Usuń
                             </button>
@@ -45,4 +48,4 @@
     </div>
 </div>
 
-<app-apartament-add-modal [isOpen]="isModalOpen" (close)="closeModal(); getApartaments()" (refreshData)="getApartaments()"></app-apartament-add-modal>
+<app-apartament-add-modal [isOpen]="isModalOpen" [itemObj]="itemObj" (close)="closeModal(); getApartaments()" (refreshData)="getApartaments()"></app-apartament-add-modal>

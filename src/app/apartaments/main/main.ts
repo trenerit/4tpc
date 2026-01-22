@@ -39,6 +39,18 @@ export class Main {
       });
     }
   }
+  
+  isId = 0;
+  itemObj = {};
+
+  modApartments(itemObj: DataModel, e: Event) {
+    e.stopPropagation();
+
+    this.itemObj = itemObj;
+
+    this.openModal();
+   
+  }
 
   isModalOpen = false;
 
