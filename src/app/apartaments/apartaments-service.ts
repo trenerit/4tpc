@@ -29,6 +29,7 @@ export class ApartamentsService {
   }
   
   modApartament(data: object): any {
+    console.log(data);
     return this.http.patch(`${this.baseApiUrl}/apartaments`, data);
   }
 

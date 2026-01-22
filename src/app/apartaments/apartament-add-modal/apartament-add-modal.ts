@@ -16,6 +16,8 @@ export class ApartamentAddModal {
     @Output() close = new EventEmitter<void>();
     @Output() refreshData = new EventEmitter<void>();
 
+    compare = true;
+
     constructor(
         private readonly aparmentsService: ApartamentsService
     ) {}
@@ -30,6 +32,7 @@ export class ApartamentAddModal {
 
     myFormSubmit(data: NgForm): any {
         if(this.itemObj.id > 0) {
+            data.value.id = this.itemObj.id;
             this.aparmentsService.modApartament(data.value).subscribe(() => {
              this.refreshData.emit();
              this.close.emit();
@@ -41,4 +44,9 @@ export class ApartamentAddModal {
         this.close.emit();
        })
     }
+
+    verifyObjs(data: NgForm) {
+        console.log(data.value);
+    }
+
 }
