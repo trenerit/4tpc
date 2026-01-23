@@ -9,11 +9,11 @@
             <form #myForm="ngForm" (ngSubmit)="myFormSubmit(myForm)">
                 <div class="form-group">
                     <label for="city">Miasto</label>
-                    <input (keyup)="verifyObjs(myForm)" [(ngModel)] = "itemObj.city" name="city" type="text" id="city" class="form-control" placeholder="Wpisz miasto">
+                    <input (keydown)="keyDownInput()" (keyup)="verifyObjs(myForm)" [(ngModel)] = "itemObj.city" name="city" required pattern="[A-ź][A-ź,-,\s]{2,40}" type="text" id="city" class="form-control" placeholder="Wpisz miasto">
                 </div>
                 <div class="form-group">
                     <label for="price">Cena (PLN)</label>
-                    <input [(ngModel)] = "itemObj.price" name="price" type="number" id="price" class="form-control" placeholder="0.00">
+                    <input (keydown)="keyDownInput()" (keyup)="verifyObjs(myForm)" [(ngModel)] = "itemObj.price" name="price" required pattern="[0-9]{3,8}" type="number" id="price" class="form-control" placeholder="0.00">
                 </div>
                 <!-- <div class="form-group">
                     <label for="description">Opis</label>
@@ -21,9 +21,10 @@
                 </div> -->
                 <div class="form-actions">
                     <button type="button" class="btn btn-secondary" (click)="closeModal()">Anuluj</button>
-                    <button [disabled]="compare" type="submit" class="btn btn-primary">Zapisz</button>
+                    <button [disabled]="compare || myForm.invalid" type="submit" class="btn btn-primary">Zapisz</button>
                 </div>
             </form>
+            <!-- <p>{{myForm.invalid}}</p> -->
         </div>
     </div>
 </div>

@@ -59,6 +59,7 @@ export class Main {
   }
 
   closeModal() {
+    this.itemObj = {};
     this.isModalOpen = false;
   }
 }
