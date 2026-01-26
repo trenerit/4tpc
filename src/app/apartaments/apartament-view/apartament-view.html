@@ -13,6 +13,11 @@
             <div class="label">ID</div>
             <div class="value">#{{data.id}}</div>
         </div>
+        
+        <div class="detail-row">
+            <div class="label">Szczegóły</div>
+            <div class="value">{{data.description}}</div>
+        </div>
 
         <div class="detail-row">
             <div class="label">Miasto</div>
@@ -28,5 +33,6 @@
             <div class="label">Data Dodania</div>
             <div class="value">{{data.date_add | date:'d.MM.yr. H:mm'}}</div>
         </div>
+        <img src="{{data.picture}}" title="dom na sprzedaz">
     </div>
 </div>

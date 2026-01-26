@@ -13,9 +13,14 @@
                 <thead>
                     <tr>
                         <th>Lp</th>
-                        <th>Miasto</th>
+                        <th>Szczegóły</th>
+                        <th>Miasto
+                            <form #searchForm="ngForm">
+                                <input ngModel name="citySearch" (keyup)="search(searchForm, 'city')">
+                            </form>
+                        </th>
                         <th>Cena</th>
-                        <th>Data Dodania</th>
+                        <!-- <th>Data Dodania</th> -->
                         <th class="text-right">Akcje</th>
                     </tr>
                 </thead>
@@ -23,11 +28,12 @@
                     @for (item of dataFromSrv; track item.id; let i = $index) {
                     <tr [routerLink]="['/view', item.id]">
                         <td>{{i + 1}}</td>
+                        <td>{{item.description}}</td>
                         <td>
                             <span class="city-badge">{{item.city}}</span>
                         </td>
                         <td class="price">{{item.price | number:'1.2-2'}} PLN</td>
-                        <td class="date">{{item.date_add | date:'d.MM.yr. H:mm'}}</td>
+                        <!-- <td class="date">{{item.date_add | date:'d.MM.yr. H:mm'}}</td> -->
                         <td class="text-right">
                             <button (click)="modApartments(item, $event)" class="btn btn-secondary btn-sm">
                                 Modyfikuj

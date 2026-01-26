@@ -4,10 +4,11 @@ import { DataModel } from '../../models/data-model';
 import { ApartamentsService } from '../apartaments-service';
 import { RouterLink } from "@angular/router";
 import { ApartamentAddModal } from '../apartament-add-modal/apartament-add-modal';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-main',
-  imports: [RouterLink, DecimalPipe, ApartamentAddModal, CommonModule],
+  imports: [RouterLink, DecimalPipe, ApartamentAddModal, CommonModule, FormsModule],
   templateUrl: './main.html',
   styleUrl: 'main.scss',
 })
@@ -61,5 +62,9 @@ export class Main {
   closeModal() {
     this.itemObj = {};
     this.isModalOpen = false;
+  }
+
+  search(data: NgForm, inputName: string) {
+   this.apartamentsService.search(inputName, data.value.citySearch);
   }
 }

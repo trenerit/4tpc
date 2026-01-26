@@ -33,6 +33,8 @@ export class ApartamentsService {
     return this.http.patch(`${this.baseApiUrl}/apartaments`, data);
   }
 
-
+  search(name: string, inputName: string) {
+    console.log(name, inputName)
+  }
   
 }

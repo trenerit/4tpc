@@ -55,6 +55,7 @@ export class ApartamentAddModal {
 
         if(this.counter > 1) return;
         this.cutObject = JSON.stringify({
+            description: this.itemObj.description,
             city: this.itemObj.city,
             price: this.itemObj.price
         })
