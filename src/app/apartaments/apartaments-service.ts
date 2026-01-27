@@ -29,12 +29,12 @@ export class ApartamentsService {
   }
   
   modApartament(data: object): any {
-    console.log(data);
     return this.http.patch(`${this.baseApiUrl}/apartaments`, data);
   }
 
-  search(name: string, inputName: string) {
-    console.log(name, inputName)
+  search(nameColumn: string, inputNameText: string) {
+    // console.log(nameColumn, inputNameText)
+    return this.http.get(`${this.baseApiUrl}/apartaments/search/${nameColumn}/${inputNameText}`);
   }
   
 }

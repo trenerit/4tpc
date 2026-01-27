@@ -64,7 +64,14 @@ export class Main {
     this.isModalOpen = false;
   }
 
-  search(data: NgForm, inputName: string) {
-   this.apartamentsService.search(inputName, data.value.citySearch);
+  search(nameColumn: string , inputNameText2: NgForm): any {
+    const inputNameText = inputNameText2.value.citySearch;
+    if(inputNameText.length == 0) {
+      this.getApartaments();
+    } else {
+      this.apartamentsService.search(nameColumn, inputNameText).subscribe((data: any) => {
+        this.dataFromSrv = data;
+      });
+    }
   }
 }

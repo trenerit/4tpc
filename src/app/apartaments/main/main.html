@@ -16,7 +16,7 @@
                         <th>Szczegóły</th>
                         <th>Miasto
                             <form #searchForm="ngForm">
-                                <input ngModel name="citySearch" (keyup)="search(searchForm, 'city')">
+                                <input ngModel name="citySearch" (keyup)="search('city', searchForm)">
                             </form>
                         </th>
                         <th>Cena</th>
