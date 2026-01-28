@@ -13,7 +13,11 @@
                 <thead>
                     <tr>
                         <th>Lp</th>
-                        <th>Szczegóły</th>
+                        <th>Szczegóły
+                            <form #searchForm1="ngForm">
+                                <input ngModel name="descriptionSearch" (keyup)="search('description', searchForm1)">
+                            </form>
+                        </th>
                         <th>Miasto
                             <form #searchForm="ngForm">
                                 <input ngModel name="citySearch" (keyup)="search('city', searchForm)">

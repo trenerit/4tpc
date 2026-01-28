@@ -32,9 +32,10 @@ export class ApartamentsService {
     return this.http.patch(`${this.baseApiUrl}/apartaments`, data);
   }
 
-  search(nameColumn: string, inputNameText: string) {
+  search(queryData: {column: string, partQuery: string}) {
     // console.log(nameColumn, inputNameText)
-    return this.http.get(`${this.baseApiUrl}/apartaments/search/${nameColumn}/${inputNameText}`);
+    console.log(queryData)
+    return this.http.post(`${this.baseApiUrl}/apartaments/search/`, queryData);
   }
   
 }

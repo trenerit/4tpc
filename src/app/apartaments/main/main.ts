@@ -65,11 +65,21 @@ export class Main {
   }
 
   search(nameColumn: string , inputNameText2: NgForm): any {
-    const inputNameText = inputNameText2.value.citySearch;
-    if(inputNameText.length == 0) {
+    
+    let inputNameText;
+    
+    if(nameColumn == 'city') {
+      inputNameText = inputNameText2.value.citySearch;
+    } else {
+      inputNameText = inputNameText2.value.descriptionSearch;
+    }
+    
+    const queryData = {column: nameColumn, partQuery: inputNameText};
+
+    if(queryData.partQuery.length == 0) {
       this.getApartaments();
     } else {
-      this.apartamentsService.search(nameColumn, inputNameText).subscribe((data: any) => {
+      this.apartamentsService.search(queryData).subscribe((data: any) => {
         this.dataFromSrv = data;
       });
     }
