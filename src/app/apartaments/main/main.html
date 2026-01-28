@@ -15,14 +15,15 @@
                         <th>Lp</th>
                         <th>Szczegóły
                             <form #searchForm1="ngForm" autocomplete="off">
-                                <input class="table-search-input" [(ngModel)]="descriptionSearchProperty"  name="descriptionSearch" (blur)="clearInputs()"
+                                <input class="table-search-input" [(ngModel)]="descriptionSearchProperty"
+                                    name="descriptionSearch" (blur)="clearInputs()"
                                     (keyup)="search('description', searchForm1)">
                             </form>
                         </th>
                         <th>Miasto
                             <form #searchForm="ngForm" autocomplete="off">
-                                <input class="table-search-input" [(ngModel)]="descriptionCityProperty" name="citySearch" (blur)="clearInputs()"
-                                    (keyup)="search('city', searchForm)">
+                                <input class="table-search-input" [(ngModel)]="descriptionCityProperty"
+                                    name="citySearch" (blur)="clearInputs()" (keyup)="search('city', searchForm)">
                             </form>
                         </th>
                         <th>Cena</th>

@@ -1,38 +1,8 @@
 <div class="admin-layout">
-  <aside class="sidebar">
-    <div class="brand">
-      <div class="logo-icon"></div>
-      <span class="logo-text">Real Estate</span>
-    </div>
-    
-    <nav class="sidebar-nav">
-      <a href="#" class="nav-item active">
-        <span class="icon">🏠</span>
-        Dashboard
-      </a>
-      <a href="#" class="nav-item">
-        <span class="icon">🏢</span>
-        Apartments
-      </a>
-      <a href="#" class="nav-item">
-        <span class="icon">👥</span>
-        Clients
-      </a>
-      <a href="#" class="nav-item">
-        <span class="icon">⚙️</span>
-        Settings
-      </a>
-    </nav>
-  </aside>
+  <app-share-aside-component></app-share-aside-component>
 
   <main class="main-content">
-    <header class="top-bar">
-      <h1 class="page-title">Dashboard</h1>
-      <div class="user-profile">
-        <div class="avatar">AD</div>
-        <span class="username">Admin User</span>
-      </div>
-    </header>
+    <app-share-header-component></app-share-header-component>
     
     <div class="content-wrapper">
       <router-outlet></router-outlet>

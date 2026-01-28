@@ -1,0 +1,42 @@
+.top-bar {
+    height: 64px;
+    background-color: var(--bg-surface);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--spacing-lg);
+    flex-shrink: 0;
+    box-shadow: var(--shadow-sm);
+
+    .page-title {
+        font-size: 1.25rem;
+        margin: 0;
+    }
+
+    .user-profile {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-sm);
+        cursor: pointer;
+
+        .avatar {
+            width: 36px;
+            height: 36px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .username {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+    }
+}
