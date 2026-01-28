@@ -14,13 +14,15 @@
                     <tr>
                         <th>Lp</th>
                         <th>Szczegóły
-                            <form #searchForm1="ngForm">
-                                <input ngModel name="descriptionSearch" (keyup)="search('description', searchForm1)">
+                            <form #searchForm1="ngForm" autocomplete="off">
+                                <input class="table-search-input" [(ngModel)]="descriptionSearchProperty"  name="descriptionSearch" (blur)="clearInputs()"
+                                    (keyup)="search('description', searchForm1)">
                             </form>
                         </th>
                         <th>Miasto
-                            <form #searchForm="ngForm">
-                                <input ngModel name="citySearch" (keyup)="search('city', searchForm)">
+                            <form #searchForm="ngForm" autocomplete="off">
+                                <input class="table-search-input" [(ngModel)]="descriptionCityProperty" name="citySearch" (blur)="clearInputs()"
+                                    (keyup)="search('city', searchForm)">
                             </form>
                         </th>
                         <th>Cena</th>
@@ -58,4 +60,5 @@
     </div>
 </div>
 
-<app-apartament-add-modal [isOpen]="isModalOpen" [itemObj]="itemObj" (close)="closeModal(); getApartaments()" (refreshData)="getApartaments()"></app-apartament-add-modal>
+<app-apartament-add-modal [isOpen]="isModalOpen" [itemObj]="itemObj" (close)="closeModal(); getApartaments()"
+    (refreshData)="getApartaments()"></app-apartament-add-modal>

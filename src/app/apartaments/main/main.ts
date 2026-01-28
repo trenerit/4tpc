@@ -15,6 +15,8 @@ import { FormsModule, NgForm } from '@angular/forms';
 export class Main {
 
   dataFromSrv: DataModel[] = [];
+  descriptionSearchProperty = '';
+  descriptionCityProperty = '';
 
   constructor(private readonly apartamentsService: ApartamentsService) { }
 
@@ -65,7 +67,7 @@ export class Main {
   }
 
   search(nameColumn: string , inputNameText2: NgForm): any {
-    
+
     let inputNameText;
     
     if(nameColumn == 'city') {
@@ -83,5 +85,11 @@ export class Main {
         this.dataFromSrv = data;
       });
     }
+  }
+
+  clearInputs() {
+    this.descriptionSearchProperty = '';
+    this.descriptionCityProperty = '';
+    this.getApartaments();
   }
 }
