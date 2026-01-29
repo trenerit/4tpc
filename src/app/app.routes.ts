@@ -10,6 +10,6 @@ export const routes: Routes = [
     {path: 'dashboard', component: DashboardViewComponent},
     {path: 'apartaments', component: Main},
     {path: 'clients', component: ClientsViewComponent},
-    {path: 'settings', component: SettingsViewComponent, resolve: {test: 'test'}},
+    {path: 'settings', component: SettingsViewComponent},
     {path: 'view/:id', component: ApartamentView}
 ];

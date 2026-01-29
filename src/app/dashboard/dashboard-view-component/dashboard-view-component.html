@@ -1,1 +1,30 @@
-<p>dashboard-view-component works!</p>
+<div class="dashboard-view">
+  <div class="tiles">
+    <a class="tile" [routerLink]="['/apartaments']">
+      <div class="tile-icon">🏢</div>
+      <div class="tile-content">
+        <h3 class="tile-title">Apartments</h3>
+        <p class="tile-sub">Zarządzaj ofertami</p>
+      </div>
+      <span class="tile-arrow">→</span>
+    </a>
+
+    <a class="tile" [routerLink]="['/clients']">
+      <div class="tile-icon">👥</div>
+      <div class="tile-content">
+        <h3 class="tile-title">Clients</h3>
+        <p class="tile-sub">Lista klientów</p>
+      </div>
+      <span class="tile-arrow">→</span>
+    </a>
+
+    <a class="tile" [routerLink]="['/settings']">
+      <div class="tile-icon">⚙️</div>
+      <div class="tile-content">
+        <h3 class="tile-title">Settings</h3>
+        <p class="tile-sub">Ustawienia systemu</p>
+      </div>
+      <span class="tile-arrow">→</span>
+    </a>
+  </div>
+</div>
